@@ -27,23 +27,6 @@ const isMobile = {
    }
 };
 
-if (isMobile.any()) {
-   document.body.classList.add('_touch');
-   // Анимация стрелок
-   let menuArrows = document.querySelectorAll('.menu__arrow');
-   if (menuArrows.length > 0) {
-      for (let index = 0; index < menuArrows.length; index++) {
-         const menuArrow = menuArrows[index];
-         menuArrow.addEventListener("click", function (e) {
-            menuArrow.parentElement.classList.toggle('_active');
-         });
-      }
-   }
-
-} else {
-   document.body.classList.add('_pc');
-}
-
 // Меню бургер
 const iconMenu = document.querySelector('.menu__icon');
 if (iconMenu) {
@@ -53,7 +36,7 @@ if (iconMenu) {
       iconMenu.classList.toggle('_active');
       menuBody.classList.toggle('_active');
    })
-}
+};
 
 // Slider
 const swiper = new Swiper('.slider-main-block', {
